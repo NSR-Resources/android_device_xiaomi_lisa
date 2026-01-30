@@ -1,0 +1,91 @@
+cc_prebuilt_library_shared {
+    name: "liblhdc",
+    owner: "xiaomi",
+    strip: { none: true },
+    compile_multilib: "both",
+    target: {
+        android_arm:   { srcs: ["libs/arm/liblhdc.so"] },
+        android_arm64: { srcs: ["libs/arm64/liblhdc.so"] },
+    },
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.bt",
+    ],
+    shared_libs: [
+        "liblog",
+        "libc",
+        "libm",
+        "libstdc++",
+        "libdl",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "liblhdcv5",
+    owner: "xiaomi",
+    strip: { none: true },
+    compile_multilib: "both",
+    target: {
+        android_arm:   { srcs: ["libs/arm/liblhdcv5.so"] },
+        android_arm64: { srcs: ["libs/arm64/liblhdcv5.so"] },
+    },
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.bt",
+    ],
+    shared_libs: [
+        "liblog",
+        "libc",
+        "libm",
+        "libstdc++",
+        "libdl",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "liblhdcBT_enc",
+    owner: "xiaomi",
+    strip: { none: true },
+    compile_multilib: "both",
+    target: {
+        android_arm:   { srcs: ["libs/arm/liblhdcBT_enc.so"] },
+        android_arm64: { srcs: ["libs/arm64/liblhdcBT_enc.so"] },
+    },
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "liblhdc",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.bt",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "liblhdcv5BT_enc",
+    owner: "xiaomi",
+    strip: { none: true },
+    compile_multilib: "both",
+    target: {
+        android_arm:   { srcs: ["libs/arm/liblhdcv5BT_enc.so"] },
+        android_arm64: { srcs: ["libs/arm64/liblhdcv5BT_enc.so"] },
+    },
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "liblhdcv5",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.bt",
+    ],
+}
